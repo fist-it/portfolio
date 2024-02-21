@@ -3,15 +3,6 @@
 version = 3
 
 [[package]]
-name = "portfolio"
-version = "0.1.0"
-dependencies = [
- "actix",
- "actix-files",
- "actix-web",
-]
-
-[[package]]
 name = "actix"
 version = "0.13.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -840,6 +831,15 @@ name = "pkg-config"
 version = "0.3.29"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2900ede94e305130c13ddd391e0ab7cbaeb783945ae07a279c268cb05109c6cb"
+
+[[package]]
+name = "portfolio"
+version = "0.1.0"
+dependencies = [
+ "actix",
+ "actix-files",
+ "actix-web",
+]
 
 [[package]]
 name = "powerfmt"
