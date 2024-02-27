@@ -4,12 +4,12 @@ use fs::{NamedFile, Files};
 
 #[get("/")]
 async fn index(_req: HttpRequest) -> impl Responder {
-    NamedFile::open_async("./views/index.html").await
+    NamedFile::open_async("../client/build/index.html").await
 }
 
-#[get("/{name}")]
-async fn person(_req: HttpRequest) -> impl Responder {
-    NamedFile::open_async("./views/test.html").await
+#[get("/marcin")]
+async fn marcin(_req: HttpRequest) -> impl Responder {
+    NamedFile::open_async("./views/marcin/index.html").await
 }
 
 
@@ -18,8 +18,8 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .service(index)
-            .service(Files::new("/css", "./views/css"))
-            .service(person)
+            .service(Files::new("/", "../client/build/"))
+            .service(marcin)
     })
     .bind("127.0.0.1:8080")?
     .run()
