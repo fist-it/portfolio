@@ -2,13 +2,10 @@ use actix_web::{get, App, HttpRequest, HttpServer, Responder};
 use actix_files as fs;
 use fs::{NamedFile, Files};
 
-
-
 #[get("/")]
 async fn index(_req: HttpRequest) -> impl Responder {
     NamedFile::open_async("./views/index.html").await
 }
-
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
