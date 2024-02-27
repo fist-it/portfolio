@@ -7,12 +7,19 @@ async fn index(_req: HttpRequest) -> impl Responder {
     NamedFile::open_async("./views/index.html").await
 }
 
+#[get("/{name}")]
+async fn person(_req: HttpRequest) -> impl Responder {
+    NamedFile::open_async("./views/test.html").await
+}
+
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .service(index)
             .service(Files::new("/css", "./views/static/css"))
+            .service(person)
     })
     .bind("127.0.0.1:8080")?
     .run()
