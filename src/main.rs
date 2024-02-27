@@ -18,7 +18,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .service(index)
-            .service(Files::new("/css", "./views/static/css"))
+            .service(Files::new("/css", "./views/css"))
             .service(person)
     })
     .bind("127.0.0.1:8080")?
