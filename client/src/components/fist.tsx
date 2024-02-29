@@ -1,12 +1,10 @@
 import * as React from "react";
 
-function Counter({ title }: {title: string}) {
-  let counter = 0;
+export default function Counter() {
+  let counter = 1;
   return(
-    <button></button>
+    <button id="counter">{counter}</button>
   );
 }
 
 
-
-export default Counter;
