@@ -15,7 +15,6 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .service(index)
             .service(Files::new("/", "./client/build/"))
-            .service(marcin)
     })
     .bind("127.0.0.1:8080")?
     .run()
